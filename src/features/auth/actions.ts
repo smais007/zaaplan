@@ -8,13 +8,7 @@ export const getCurrent = async () => {
       .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!)
       .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT!);
 
-    console.log(
-      process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT,
-      process.env.NEXT_PUBLIC_APPWRITE_PROJECT
-    );
-
     const session = await cookies().get(AUTH_COOKIE);
-    console.log("Session Cookie:", session);
 
     if (!session) return null;
     client.setSession(session.value);
@@ -22,7 +16,6 @@ export const getCurrent = async () => {
 
     return await account.get();
   } catch (error) {
-    console.error("Error fetching user account:", error);
     return null;
   }
 };
