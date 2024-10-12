@@ -8,6 +8,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
 import { useGetWorkspaces } from "@/features/workspaces/api/use-get-workspaces";
 import { WorkspaceAvatar } from "@/features/workspaces/components/workspace-avatar";
 import { useRouter } from "next/navigation";
@@ -29,10 +36,19 @@ export const WorkspaceSwitcher = () => {
     <div className="flex flex-col gap-y-2">
       <div className="flex items-center justify-between">
         <p className="text-xs uppercase text-neutral-500 ">Workspaces</p>
-        <RiAddCircleFill
-          onClick={open}
-          className="size-5 text-neutral-500 cursor-pointer hover:opacity-75 transition"
-        />
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger>
+              <RiAddCircleFill
+                onClick={open}
+                className="size-5 text-neutral-500 cursor-pointer hover:opacity-75 transition"
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Add workspace</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </div>
       <Select onValueChange={onSelect} value={workspaceId}>
         <SelectTrigger className="w-full bg-neutral-200 font-medium p-1">
