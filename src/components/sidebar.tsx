@@ -9,13 +9,16 @@ export const Sidebar = () => {
   return (
     <aside className="h-full bg-neutral-100 p-4 w-full">
       <Link href={"/"}>
-        <Image
-          src="/logo.svg"
-          alt="logo"
-          width={120}
-          height={36}
-          className="w-full"
-        />
+        <div className="flex items-center gap-2">
+          <Image
+            src="/logo.svg"
+            alt="logo"
+            width={20}
+            height={20}
+            className="h-10 w-10 rounded-lg"
+          />
+          <p className="text-3xl font-medium"> AstroCollab</p>
+        </div>
       </Link>
       <DottedSeparator className="my-4" />
       <WorkspaceSwitcher />
