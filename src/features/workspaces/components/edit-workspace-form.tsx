@@ -102,21 +102,12 @@ export const EditWorkspaceForm = ({
       ...values,
       image: values.image instanceof File ? values.image : "",
     };
-    mutate(
-      {
-        form: finalValues,
-        param: {
-          workspaceId: initialValues.$id,
-        },
+    mutate({
+      form: finalValues,
+      param: {
+        workspaceId: initialValues.$id,
       },
-      {
-        onSuccess: ({ data }) => {
-          form.reset();
-          // onCancel?.();
-          router.push(`/workspaces/${data.$id}`);
-        },
-      }
-    );
+    });
   };
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {

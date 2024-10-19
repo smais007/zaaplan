@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+
 import { z } from "zod";
 import { registerSchema } from "../schemas";
 import { useRegister } from "../api/use-register";
@@ -108,7 +109,7 @@ export const SignUpCard = () => {
           className="w-full"
         >
           <FaGithub className="size-5 mr-2" />
-          Login With Google
+          Login With Github
         </Button>
       </CardContent>
     </Card>

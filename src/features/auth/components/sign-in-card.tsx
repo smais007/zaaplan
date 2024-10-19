@@ -98,7 +98,7 @@ export const SignInCard = () => {
           className="w-full"
         >
           <FaGithub className="size-5 mr-2" />
-          Login With Google
+          Login With Github
         </Button>
       </CardContent>
     </Card>
