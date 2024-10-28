@@ -18,7 +18,7 @@ export const columns: ColumnDef<Task>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant="outline"
+          variant="icon"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Task name
@@ -36,7 +36,7 @@ export const columns: ColumnDef<Task>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant="outline"
+          variant="icon"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Project
@@ -63,7 +63,7 @@ export const columns: ColumnDef<Task>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant="outline"
+          variant="icon"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Assigne to
@@ -90,7 +90,7 @@ export const columns: ColumnDef<Task>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant="outline"
+          variant="icon"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Due date
@@ -108,7 +108,7 @@ export const columns: ColumnDef<Task>[] = [
     header: ({ column }) => {
       return (
         <Button
-          variant="outline"
+          variant="icon"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
           Status
@@ -128,7 +128,7 @@ export const columns: ColumnDef<Task>[] = [
       const projectId = row.original.projectId;
       return (
         <TaskActions id={id} projectId={projectId}>
-          <Button className="h-8 w-8 p-0" variant={"ghost"}>
+          <Button className="h-8 w-8 p-0" variant={"link"}>
             <MoreVertical className="h-4 w-4" />
           </Button>
         </TaskActions>

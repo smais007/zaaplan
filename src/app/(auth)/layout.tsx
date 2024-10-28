@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Toaster } from "@/components/ui/sonner";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -31,6 +32,7 @@ const AuthLayout = ({ children }: AuthLayoutProps) => {
           </Button>
         </nav>
         <div className="flex flex-col justify-center items-center pt-4 md:pt-14">
+          <Toaster />
           {children}
         </div>
       </div>

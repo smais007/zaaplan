@@ -93,7 +93,11 @@ export const MemberList = () => {
               </div>
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button className="ml-auto" variant="secondary" size="icon">
+                  <Button
+                    className="ml-auto border-none shadow-none bg-transparent"
+                    variant="link"
+                    size="icon"
+                  >
                     <MoreVerticalIcon className="size-4 text-muted-foreground" />
                   </Button>
                 </DropdownMenuTrigger>
