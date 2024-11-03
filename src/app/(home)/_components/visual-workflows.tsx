@@ -1,6 +1,6 @@
 export const VisualWorkflows = () => {
   return (
-    <div className="py-20 mx-auto container ">
+    <div className=" mx-auto container  py-24 sm:px-6 sm:py-32 lg:px-8 ">
       <div className="text-center mb-10">
         <h1 className="text-3xl font-semibold ">Visual Workflows</h1>
         <p className="text-muted-foreground mt-4 text-base">
