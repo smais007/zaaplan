@@ -1,4 +1,4 @@
-export default function Newsletter() {
+export const Newsletter = () => {
   return (
     <div className="bg-transparent py-16 sm:py-24">
       <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -60,4 +60,4 @@ export default function Newsletter() {
       </div>
     </div>
   );
-}
+};

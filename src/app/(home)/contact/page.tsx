@@ -1,15 +1,9 @@
+import { FAQ } from "@/components/home/faq";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
 import { MessageCircleMoreIcon, MoveUpRightIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { FaDiscord, FaGithub } from "react-icons/fa";
-import FAQ from "../_components/faq";
 
 const ContactPage = () => {
   return (

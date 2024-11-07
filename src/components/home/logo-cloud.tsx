@@ -1,54 +1,42 @@
-import { cn } from "@/lib/utils";
 import Marquee from "@/components/ui/marquee";
 import Image from "next/image";
-
-import Clearbit from "../../../../public/logos/clearbit.png";
-import Front from "../../../../public/logos/front.png";
-import Hubspot from "../../../../public/logos/hubspot.png";
-import Integromat from "../../../../public/logos/integromat.png";
-import Mixpanel from "../../../../public/logos/mixpanel.png";
-import Parabola from "../../../../public/logos/parabola.png";
-import Spread from "../../../../public/logos/spread.png";
-import Surveymonkey from "../../../../public/logos/surveymonkey.png";
-import Voiceflow from "../../../../public/logos/voiceflow.png";
 
 const logos = [
   {
     name: "Jack",
-    img: Hubspot,
+    img: "/logos/hubspot.png",
   },
   {
     name: "Jill",
-    img: Clearbit,
+    img: "/logos/clearbit.png",
   },
   {
     name: "John",
-    img: Front,
+    img: "/logos/front.png",
   },
   {
     name: "Jane",
-    img: Integromat,
+    img: "/logos/integromat.png",
   },
   {
     name: "Jenny",
-    img: Mixpanel,
+    img: "/logos/mixpanel.png",
   },
   {
     name: "James",
-    img: Parabola,
-  },
-
-  {
-    name: "James",
-    img: Spread,
+    img: "/logos/parabola.png",
   },
   {
     name: "James",
-    img: Surveymonkey,
+    img: "/logos/spread.png",
   },
   {
     name: "James",
-    img: Voiceflow,
+    img: "/logos/surveymonkey.png",
+  },
+  {
+    name: "James",
+    img: "/logos/voiceflow.png",
   },
 ];
 

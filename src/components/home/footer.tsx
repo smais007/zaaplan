@@ -64,7 +64,7 @@ const navigation = [
   },
 ];
 
-export default function Footer() {
+export const Footer = () => {
   return (
     <footer className="bg-white">
       <hr />
@@ -87,4 +87,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
