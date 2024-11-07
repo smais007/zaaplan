@@ -3,39 +3,39 @@ import Image from "next/image";
 
 const logos = [
   {
-    name: "Jack",
+    name: "huspot",
     img: "/logos/hubspot.png",
   },
   {
-    name: "Jill",
+    name: "clearbit",
     img: "/logos/clearbit.png",
   },
   {
-    name: "John",
+    name: "front",
     img: "/logos/front.png",
   },
   {
-    name: "Jane",
+    name: "integromat",
     img: "/logos/integromat.png",
   },
   {
-    name: "Jenny",
+    name: "mixpanel",
     img: "/logos/mixpanel.png",
   },
   {
-    name: "James",
+    name: "parabola",
     img: "/logos/parabola.png",
   },
   {
-    name: "James",
+    name: "spread",
     img: "/logos/spread.png",
   },
   {
-    name: "James",
+    name: "surveymonkey",
     img: "/logos/surveymonkey.png",
   },
   {
-    name: "James",
+    name: "voiceflow",
     img: "/logos/voiceflow.png",
   },
 ];

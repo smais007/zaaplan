@@ -323,7 +323,7 @@ export default function Example() {
             {tiers.map((tier) => (
               <Tab
                 key={tier.name}
-                className="w-1/3 border-b border-gray-100 py-4 text-base/8 font-medium text-indigo-600 data-[selected]:border-indigo-600 [&:not([data-focus])]:focus:outline-none"
+                className="w-1/3 border-b border-gray-100 py-4 text-base/8 font-medium text-gray-950 data-[selected]:border-primary [&:not([data-focus])]:focus:outline-none"
               >
                 {tier.name}
               </Tab>

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { use } from "react";
 import { Button } from "@/components/ui/button";
 import { AlignRight } from "lucide-react";
 import Image from "next/image";
@@ -8,6 +8,8 @@ import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { UserButton } from "@/features/auth/components/user-button";
+import { useCurrent } from "@/features/auth/api/use-current";
 
 const navLinks = [
   {
@@ -30,6 +32,7 @@ const navLinks = [
 
 export const Navbar = () => {
   const pathname = usePathname();
+  const { data: user } = useCurrent();
   return (
     <div className="flex items-center justify-between  fixed top-0 left-0 right-0 z-50 mx-auto max-w-screen-2xl p-4   rounded-full mt-3  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 bg-gray-400 ">
       <div>
@@ -65,15 +68,21 @@ export const Navbar = () => {
       </div>
 
       <div className="hidden lg:block">
-        <Button
-          asChild
-          className="bg-transparent border-none text-black shadow-none hover:bg-transparent"
-        >
-          <Link href="/sign-in">Sign in</Link>
-        </Button>
-        <Button asChild variant="primary" className="ml-2 rounded-full">
-          <Link href="/sign-up">Get Started</Link>
-        </Button>
+        {!user ? (
+          <>
+            <Button
+              asChild
+              className="bg-transparent border-none text-black shadow-none hover:bg-transparent"
+            >
+              <Link href="/sign-in">Sign in</Link>
+            </Button>
+            <Button asChild variant="primary" className="ml-2 rounded-full">
+              <Link href="/sign-up">Get Started</Link>
+            </Button>
+          </>
+        ) : (
+          <UserButton />
+        )}
       </div>
       <div className="lg:hidden">
         <Drawer>
