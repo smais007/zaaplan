@@ -23,3 +23,14 @@ export const getWorkspaces = async () => {
   ]);
   return workspaces;
 };
+
+export const getTotalWorkspaces = async () => {
+  const { databases } = await createSessionClient();
+
+  const totalWorkspaces = await databases.listDocuments(
+    DATABASE_ID,
+    WORKSPACES_ID,
+    [Query.orderDesc("$createdAt")]
+  );
+  return totalWorkspaces;
+};

@@ -9,7 +9,7 @@ import { useGetProjectAnalytics } from "@/features/projects/api/use-get-project-
 import { ProjectAvatar } from "@/features/projects/components/project-avatar";
 import { useProjectId } from "@/features/projects/hooks/use-project-id";
 import { TaskViewSwitcher } from "@/features/tasks/components/task-view-switcher";
-import { PencilIcon } from "lucide-react";
+import { DraftingCompass, FileText, PencilIcon } from "lucide-react";
 import Link from "next/link";
 
 export const ProjectIdClient = () => {
@@ -42,15 +42,37 @@ export const ProjectIdClient = () => {
           />
           <p className="text-lg font-semibold">{project.name}</p>
         </div>
-        <div className="">
-          <Button size="sm" variant="secondary" asChild>
-            <Link
-              href={`/workspaces/${project.workspaceId}/projects/${project.$id}/settings`}
-            >
-              <PencilIcon className="size-4 mr-2" />
-              Edit Project
-            </Link>
-          </Button>
+        <div className="flex items-center gap-x-2">
+          <div className="">
+            <Button size="sm" variant="secondary" asChild>
+              <Link
+                href={`/workspaces/${project.workspaceId}/projects/${project.$id}/whiteboard`}
+              >
+                <DraftingCompass className="size-4 mr-2" />
+                White Board
+              </Link>
+            </Button>
+          </div>
+          <div className="">
+            <Button size="sm" variant="secondary" asChild>
+              <Link
+                href={`/workspaces/${project.workspaceId}/projects/${project.$id}/documents`}
+              >
+                <FileText className="size-4 mr-2" />
+                Documents
+              </Link>
+            </Button>
+          </div>
+          <div className="">
+            <Button size="sm" variant="secondary" asChild>
+              <Link
+                href={`/workspaces/${project.workspaceId}/projects/${project.$id}/settings`}
+              >
+                <PencilIcon className="size-4 mr-2" />
+                Edit Project
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
       {analytics ? <Analytics data={analytics} /> : null}

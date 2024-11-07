@@ -30,3 +30,9 @@ export const getProject = async ({ projectId }: GetProjectProps) => {
 
   return project;
 };
+
+export const getTotalProjects = async () => {
+  const { databases } = await createSessionClient();
+  const totalProjects = await databases.listDocuments(DATABASE_ID, PROJECTS_ID);
+  return totalProjects;
+};

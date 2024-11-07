@@ -38,6 +38,9 @@ export const Navbar = () => {
           className="h-8 w-8 rounded-full"
         />
         <h1 className="text-xl md:text-2xl font-semibold">AstroCollab</h1>
+        <p className="text-sm font-semibold bg-gradient-to-r from-pink-500 to-violet-500 px-2 text-gray-50 py-0.5 rounded-full">
+          Beta
+        </p>
       </div>
       <div className="hidden lg:block">
         <ul className="flex items-center gap-x-12">
