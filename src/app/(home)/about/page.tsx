@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { Statistics } from "@/components/statistics";
-import CardSection from "../_components/multilayer-card";
-import Newsletter from "../_components/newsletter";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { CardSection } from "@/components/home/multilayer-card";
+import { Newsletter } from "@/components/home/newsletter";
 
 export default function AboutPage() {
   return (
@@ -126,7 +126,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-        <Statistics />
+        {/* <Statistics /> */}
 
         {/* <Onboarding /> */}
 

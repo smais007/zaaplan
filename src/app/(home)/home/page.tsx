@@ -1,17 +1,15 @@
-import React from "react";
-import { Hero } from "../_components/hero";
-import { LogoCloud } from "../_components/logo-cloud";
-import { VisualWorkflows } from "../_components/visual-workflows";
-import { CTA } from "../_components/cta";
-import { Statistics } from "@/components/statistics";
-import { FeaturesSectionDemo } from "../_components/features";
+import { CTA } from "@/components/home/cta";
+import { FeaturesSectionDemo } from "@/components/home/features";
+import { Hero } from "@/components/home/hero";
+import { LogoCloud } from "@/components/home/logo-cloud";
+import { VisualWorkflows } from "@/components/home/visual-workflows";
 
 const LandingPage = () => {
   return (
     <div>
       <Hero />
       <LogoCloud />
-      <Statistics />
+      {/* <Statistics /> */}
       <VisualWorkflows />
       <FeaturesSectionDemo />
       <CTA />

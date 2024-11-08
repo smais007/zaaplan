@@ -59,7 +59,7 @@ export const MultilayerCardV_1 = ({ children }: CardProps) => (
 );
 
 // Usage of cards
-const CardSection = () => (
+export const CardSection = () => (
   <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-6 ">
     {cardContent.map((content, index) => (
       <MultilayerCardV_1 key={index}>
@@ -73,5 +73,3 @@ const CardSection = () => (
     ))}
   </div>
 );
-
-export default CardSection;
