@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { QueryProvider } from "@/components/query-provider";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/sonner";
@@ -22,13 +22,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={cn(inter.className, "antialiased min-h-screen")}>
-        <QueryProvider>
-          <Toaster />
-          {children}
-        </QueryProvider>
-      </body>
-    </html>
+    <main className="mx-auto container px-4 sm:px-6 lg:px-8 flex flex-col min-h-schreen justify-between">
+      <Navbar />
+
+      {children}
+
+      <Footer />
+    </main>
   );
 }

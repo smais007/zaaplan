@@ -45,7 +45,7 @@ export const Navbar = () => {
             className="h-8 w-8 rounded-full"
           />
           <h1 className="text-xl md:text-2xl font-semibold">AstroColab</h1>
-          <p className="text-sm font-semibold bg-gradient-to-r from-pink-500 to-violet-500 px-2 text-gray-50 py-0.5 rounded-full">
+          <p className="hidden md:block text-sm font-semibold bg-gradient-to-r from-pink-500 to-violet-500 px-2 text-gray-50 py-0.5 rounded-full">
             Beta
           </p>
         </Link>
@@ -86,9 +86,12 @@ export const Navbar = () => {
       </div>
       <div className="lg:hidden">
         <Drawer>
-          <DrawerTrigger>
-            <AlignRight />
-          </DrawerTrigger>
+          <div className="flex items-center gap-x-4">
+            <DrawerTrigger>
+              <AlignRight />
+            </DrawerTrigger>
+            {user ? <UserButton /> : ""}
+          </div>
           <DrawerContent>
             <div className="p-4">
               <div>
@@ -104,12 +107,22 @@ export const Navbar = () => {
                 </ul>
               </div>
               <div className="flex flex-col gap-y-3">
-                <Button asChild variant="secondary" className="rounded-full">
-                  <Link href="/sign-in">Sign in</Link>
-                </Button>
-                <Button asChild variant="primary" className="rounded-full">
-                  <Link href="/sign-up">Get Started</Link>
-                </Button>
+                {!user ? (
+                  <>
+                    <Button
+                      asChild
+                      variant="secondary"
+                      className="rounded-full"
+                    >
+                      <Link href="/sign-in">Sign in</Link>
+                    </Button>
+                    <Button asChild variant="primary" className="rounded-full">
+                      <Link href="/sign-up">Get Started</Link>
+                    </Button>
+                  </>
+                ) : (
+                  ""
+                )}
               </div>
             </div>
           </DrawerContent>

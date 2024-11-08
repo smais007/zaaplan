@@ -1,11 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      "startup-template-sage.vercel.app",
-      "avatar.vercel.sh",
-      "tailwindui.com",
-    ],
+    domains: ["*", "startup-template-sage.vercel.app", "tailwindui.com"],
+  },
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/home",
+        permanent: true,
+      },
+    ];
   },
 };
 

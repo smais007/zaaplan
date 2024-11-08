@@ -20,12 +20,12 @@ import {
 import { useCurrent } from "../api/use-current";
 import { useLogout } from "../api/use-logout";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useWorkspaces } from "@/features/workspaces/api/use-workspaces";
 
 export const UserButton = () => {
   const { data: user, isLoading } = useCurrent();
   const { mutate: logout } = useLogout();
-
+  const { data } = useWorkspaces();
   if (isLoading) {
     return (
       <div className="size-10 rounded-full flex items-center justify-center  bg-neutral-200 border border-neutral-200 ">
@@ -42,6 +42,16 @@ export const UserButton = () => {
   const avatarFallback = name
     ? name.charAt(0).toUpperCase()
     : email.charAt(0).toUpperCase() ?? "U";
+
+  const workspacesCount = data?.total ?? 0;
+  const workspaceId = data?.documents?.[0]?.$id ?? null;
+
+  const redirectPath =
+    workspacesCount === 0 || !workspaceId
+      ? "/workspaces/create"
+      : `/workspaces/${workspaceId}`;
+
+  console.log("Dashboard path: ", redirectPath);
 
   return (
     <DropdownMenu modal={false}>
@@ -74,7 +84,7 @@ export const UserButton = () => {
         <DropdownMenuSeparator className="mb-1" />
         <DropdownMenuItem>
           <LayoutDashboard className="size-4 mr-2" />
-          <Link href="/">Dashboard</Link>
+          <Link href={redirectPath}>Dashboard</Link>
         </DropdownMenuItem>
         <DropdownMenuItem className="cursor-pointer">
           <User className="size-4 mr-2" />
