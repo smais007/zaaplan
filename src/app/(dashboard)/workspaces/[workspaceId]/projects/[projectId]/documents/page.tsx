@@ -2,18 +2,15 @@
 
 import React, { useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
+import { Tools } from "../tools";
 
 const Documents = () => {
   const [docs, setDocs] = useState("**Hello world!!!**");
   console.log(docs);
   return (
-    <div>
-      <div>
-        <div>
-          <h1>Documents</h1>
-        </div>
-      </div>
-      <div data-color-mode="light" className="container">
+    <div className="flex flex-col gap-y-4">
+      <Tools />
+      <div data-color-mode="light" className="w-full">
         <MDEditor
           value={docs}
           preview="edit"
