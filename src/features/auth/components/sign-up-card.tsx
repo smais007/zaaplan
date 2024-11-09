@@ -24,6 +24,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Label } from "@/components/ui/label";
 
+import { signUpWithGithub, signUpWithGoogle } from "@/lib/oauth";
+
 export const SignUpCard = () => {
   const { mutate } = useRegister();
   const form = useForm<z.infer<typeof registerSchema>>({
@@ -124,6 +126,7 @@ export const SignUpCard = () => {
         </div>
         <div className="flex flex-col gap-y-4">
           <Button
+            onClick={() => signUpWithGoogle()}
             variant="primary"
             disabled={false}
             className="w-full rounded-full"
@@ -132,6 +135,7 @@ export const SignUpCard = () => {
             Google
           </Button>
           <Button
+            onClick={() => signUpWithGithub()}
             variant="primary"
             disabled={false}
             className="w-full rounded-full"
