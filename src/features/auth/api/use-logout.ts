@@ -2,6 +2,7 @@ import { client } from "@/lib/rpc";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { InferRequestType, InferResponseType } from "hono";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 type ResponseType = InferResponseType<(typeof client.api.auth.logout)["$post"]>;
 
@@ -14,9 +15,9 @@ export const useLogout = () => {
       return await response.json();
     },
     onSuccess: () => {
+      toast.success("Logged out successfully");
       router.refresh();
-      queryClient.invalidateQueries({ queryKey: ["current"] });
-      queryClient.invalidateQueries({ queryKey: ["workspaces"] });
+      queryClient.invalidateQueries();
     },
   });
 
