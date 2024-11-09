@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Welcome to AstroColab! 🐣
 
-## Getting Started
+AstroColab is a web application that allows users to create and manage projects. It is designed to be simple, intuitive and easy to use. The application is built using Next.js, a popular React framework, and is fully responsive, meaning it can be used on any device with a web browser.
 
-First, run the development server:
+The application is designed to be used by teams and individuals who want to create and manage projects. It includes features such as:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Creating and managing projects
+- Assigning tasks to team members
+- Tracking task status
+- Creating and managing teams
+- Creating and managing team members
+- Creating and managing team roles
+- Creating and managing project templates
+- Creating and managing project categories
+- Creating and managing project tags
+- Creating and managing project custom fields
+- Creating and managing project custom sections
+- Creating and managing project custom pages
+- Creating and managing project workflows
+- Creating and managing project Kanban boards
+- Creating and managing project Gantt charts
+- Creating and managing project reports
+- Creating and managing project custom reports
