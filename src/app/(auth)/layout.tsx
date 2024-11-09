@@ -1,5 +1,7 @@
 "use client";
 
+import { DotPatternLinearGradient } from "@/components/dot-pattern-linear-gradient";
+import { TestimonialTooltip } from "@/components/testimonial-tooltip";
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/sonner";
 import Image from "next/image";
@@ -14,26 +16,17 @@ interface AuthLayoutProps {
 const AuthLayout = ({ children }: AuthLayoutProps) => {
   const pathnema = usePathname();
   const isSignIn = pathnema === "/sign-in";
+
   return (
-    <main className="bg-white min-h-screen">
-      <div className="mx-auto max-w-screen-2xl p-4">
-        <nav className="flex justify-between items-center">
-          <Image
-            src="/logo.svg"
-            alt="logo"
-            className="h-10 w-10 rounded-lg"
-            width={20}
-            height={20}
-          />
-          <Button asChild variant="secondary">
-            <Link href={isSignIn ? "/sign-up" : "/sign-in"}>
-              {isSignIn ? "Sign Up" : "Sign In"}
-            </Link>
-          </Button>
-        </nav>
-        <div className="flex flex-col justify-center items-center pt-4 md:pt-14">
-          <Toaster />
-          {children}
+    <main className=" ">
+      <Toaster />
+
+      <div className="flex items-center justify-center h-screen">
+        <div className="w-full lg:w-2/5  flex  justify-center">{children}</div>
+        <div className="w-3/5 bg-gray-100/40 min-h-screen hidden lg:block">
+          <div className=" ">
+            <DotPatternLinearGradient />
+          </div>
         </div>
       </div>
     </main>
