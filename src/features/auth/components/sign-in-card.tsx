@@ -13,7 +13,8 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import { DottedSeparator } from "@/components/dotted-separator";
+import { signUpWithGithub, signUpWithGoogle } from "@/lib/oauth";
+
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -112,6 +113,7 @@ export const SignInCard = () => {
         </div>
         <div className="flex flex-col gap-y-4">
           <Button
+            onClick={() => signUpWithGoogle()}
             variant="primary"
             disabled={false}
             className="w-full rounded-full"
@@ -120,6 +122,7 @@ export const SignInCard = () => {
             Google
           </Button>
           <Button
+            onClick={() => signUpWithGithub()}
             variant="primary"
             disabled={false}
             className="w-full rounded-full"
