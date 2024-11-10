@@ -2,14 +2,14 @@
 
 import { createAdminClient } from "@/lib/appwrite";
 import { redirect } from "next/navigation";
-import { headers } from "next/headers";
 import { OAuthProvider } from "node-appwrite";
+
+const origin = process.env.NEXT_PUBLIC_APP_URL;
+
+console.log("Origin", origin);
 
 export async function signUpWithGithub() {
   const { account } = await createAdminClient();
-
-  const origin = headers().get("origin");
-
   const redirectUrl = await account.createOAuth2Token(
     OAuthProvider.Github,
     `${origin}/oauth`,
@@ -21,14 +21,13 @@ export async function signUpWithGithub() {
 
 export async function signUpWithGoogle() {
   const { account } = await createAdminClient();
-
-  //   const origin = headers().get("origin");
-
   const redirectUrl = await account.createOAuth2Token(
     OAuthProvider.Google,
-    `${process.env.NEXT_PUBLIC_APP_URL}/oauth`,
-    `${process.env.NEXT_PUBLIC_APP_URL}/sign-up`
+    `${origin}/oauth`,
+    `${origin}/sign-up`
   );
+
+  console.log("Callback url from oauth", redirectUrl);
 
   return redirect(redirectUrl);
 }
