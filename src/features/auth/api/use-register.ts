@@ -17,7 +17,7 @@ export const useRegister = () => {
       return await response.json();
     },
     onSuccess: () => {
-      router.refresh();
+      router.push("/");
       queryClient.invalidateQueries({ queryKey: ["current"] });
     },
   });
