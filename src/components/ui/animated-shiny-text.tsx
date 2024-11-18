@@ -11,7 +11,7 @@ interface AnimatedShinyTextProps {
 const AnimatedShinyText: FC<AnimatedShinyTextProps> = ({
   children,
   className,
-  shimmerWidth = 200,
+  shimmerWidth = 100,
 }) => {
   return (
     <div
