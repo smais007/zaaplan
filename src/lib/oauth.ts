@@ -4,7 +4,8 @@ import { createAdminClient } from "@/lib/appwrite";
 import { redirect } from "next/navigation";
 import { OAuthProvider } from "node-appwrite";
 
-const origin = "https://astro-colab.vercel.app";
+const origin = process.env.NEXT_PUBLIC_APP_URL;
+
 console.log("origin fron env", origin);
 
 export async function signUpWithGithub() {
